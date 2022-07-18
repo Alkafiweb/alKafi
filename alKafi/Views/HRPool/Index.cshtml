@@ -1,0 +1,580 @@
+﻿@model alKafi.Models.RecruitmenterViewModel
+@{
+    ViewData["Title"] = "Index";
+    int ID = 0;
+
+
+}
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+     aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content model_two">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <p>@ID</p>    إدخال بيانت مرشح جديد
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @{
+                    await Html.RenderPartialAsync("Create", Model.SelectedRecruitmenterTbl);
+                }
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+<!-- Modal -->
+
+
+
+
+
+
+<!-- ================= start body title ================== -->
+<div class="container-fluid bodyTitle">
+
+
+
+
+    <div class="row">
+        <div class="col text-left">
+            <h1>قائمة المرشحين</h1>
+        </div>
+
+
+        <div class="col-auto d-flex align-items-center">
+            <button role="button" data-toggle="modal" data-target="#exampleModal1" class="btn btn-primary mb-2 mt-2 ng-star-inserted">
+                <em class="fa fa-lg fa-clipboard"></em> &nbsp;
+                <span> مرشح جديد </span>
+            </button>
+            <!---->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-right pagenation">
+            <p>
+                1 - 10 من 578
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================== end body title and start body filter ================= -->
+
+<div class="container-fluid filter">
+    <form action="" class="app-filter" id="appFilter">
+        <div class="app-panel mb-0">
+            <div id="filter_panel" class="row justify-content-md-left">
+                <div class="dropdown">
+
+                    <div class=" dropdown-toggle app-filter-header" id="dropdownMenuButton" data-toggle="dropdown"
+                         aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-sort"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted">فرز حسب</span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">تاريخ الأحدث</a>
+                        <a class="dropdown-item" href="#"> تاريخ الأقدم </a>
+                        <a class="dropdown-item" href="#"> الاسم </a>
+                    </div>
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_epro"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-address-card fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted">مكتب الارسال الخارجى </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_epro"
+                         aria-labelledby="filter_by_epro">
+                        <em class="fa fa-search searchIcon"></em>
+                        <input type="text" placeholder="بحث" id="myInput" onkeyup="filterFunction()">
+
+                        <a class="dropdown-item" href="#">تاريخ الأحدث</a>
+                        <a class="dropdown-item" href="#"> تاريخ الأقدم </a>
+                        <a class="dropdown-item" href="#"> الاسم </a>
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_job"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-briefcase fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الوظيفه </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_job"
+                         aria-labelledby="filter_by_job">
+                        <em class="fa fa-search searchIcon"></em>
+                        <input type="text" placeholder="بحث" id="myInput" onkeyup="filterFunction()">
+
+                        <a class="dropdown-item" href="#">تاريخ الأحدث</a>
+                        <a class="dropdown-item" href="#"> عامل </a>
+                        <a class="dropdown-item" href="#"> سائق </a>
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_skill"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-universal-access"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> المهارة </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_skill"
+                         aria-labelledby="filter_by_skill">
+                        <em class="fa fa-search searchIcon"></em>
+                        <input type="text" placeholder="بحث" id="myInput" onkeyup="filterFunction()">
+
+                        <a class="dropdown-item" href="#">تاريخ الأحدث</a>
+                        <a class="dropdown-item" href="#"> التنظيف </a>
+                        <a class="dropdown-item" href="#"> سائق </a>
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_degree"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-university"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> المؤهل </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_degree"
+                         aria-labelledby="filter_by_degree">
+
+
+
+                        <a class="dropdown-item" href="#"> بكالريوس</a>
+                        <a class="dropdown-item" href="#"> التنظيف </a>
+                        <a class="dropdown-item" href="#"> سائق </a>
+                    </div>
+
+                </div>
+
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_age"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-birthday-cake fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> العمر </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_age"
+                         aria-labelledby="filter_by_age">
+
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="mx-1">من</label><input type="number"
+                                                                     class="form-control app-filter-age-range-input mx-1 ">
+                            </div>
+                            <div class="form-group">
+                                <label class="mx-1">إلى</label><input type="number"
+                                                                      class="form-control app-filter-age-range-input mx-1 ">
+                            </div><button type="submit" class="btn btn-primary btn-sm mx-2">
+                                <em class="fa fa-lg fa-check"></em>
+                            </button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_stat"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-life-ring"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الحالة الاجتماعية </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_stat"
+                         aria-labelledby="filter_by_stat">
+
+
+
+                        <a class="dropdown-item" href="#"> أعزب</a>
+                        <a class="dropdown-item" href="#"> متزوج </a>
+
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_sex"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-genderless fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الجنس </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_sex"
+                         aria-labelledby="filter_by_sex">
+
+
+
+                        <a class="dropdown-item" href="#"> ذكر</a>
+                        <a class="dropdown-item" href="#"> أنثى </a>
+
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_reg"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-book fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الديانة </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_reg"
+                         aria-labelledby="filter_by_reg">
+
+
+
+                        <a class="dropdown-item" href="#"> مسلم</a>
+                        <a class="dropdown-item" href="#"> غير مسلم </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_natio"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-globe fa-lg"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الجنسية </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_natio"
+                         aria-labelledby="filter_by_natio">
+                        <em class="fa fa-search searchIcon"></em>
+                        <input type="text" placeholder="بحث" id="myInput" onkeyup="filterFunction()">
+
+                        <a class="dropdown-item" href="#">مصرى </a>
+                        <a class="dropdown-item" href="#"> سعودى </a>
+                        <a class="dropdown-item" href="#"> امريكى </a>
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" id="filter_by_from" data-toggle="dropdown"
+                         aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-calendar ng-star-inserted"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted label">
+                                من تاريخ
+                                <input type="text" id="datepicker">
+                            </span>
+
+                        </span>
+                    </div>
+
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" id="filter_by_to" data-toggle="dropdown"
+                         aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-calendar ng-star-inserted"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted label">
+                                الى تاريخ
+                                <input type="text" id="datepicker2">
+                            </span>
+
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="filter_by_epro">
+                    <div class=" dropdown-toggle app-filter-header" onclick="myFunction()" id="filter_by_word"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <em class="fa fa-lg fa-search ng-star-inserted"></em><span class="app-filter-header-placeholder">
+                            <span class="ng-star-inserted"> الكلمات الداله </span>
+
+                        </span><em class="fa fa-lg fa-angle-down"></em>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" id="dropdown_word"
+                         aria-labelledby="filter_by_word">
+                        <em class="fa fa-search searchIcon"></em>
+                        <input type="text" placeholder="بحث" id="myInput" onkeyup="filterFunction()">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="my-2 py-1 px-2 app-filter-control-value-list app-clear-filters ng-star-inserted">
+                <span>
+                    إلغاء
+                    جميع التصفيات
+                </span><em class="fa fa-lg fa-times-circle"></em>
+            </div>
+        </div>
+
+
+        <div class="row  app-filter-status">
+            <div class="custom-checkbox custom-control custom-control-inline ng-star-inserted">
+                <input type="checkbox" class="custom-control-input" id="custom-radio-2-0" name="custom-radio-2-0"
+                       value="AVAILABLE">
+                <label class="custom-control-label" for="custom-radio-2-0">متاح</label>
+            </div>
+
+            <div class="custom-checkbox custom-control custom-control-inline ng-star-inserted">
+                <input type="checkbox" class="custom-control-input" id="custom-radio-2-2" name="custom-radio-2-0"
+                       value="AVAILABLE">
+                <label class="custom-control-label" for="custom-radio-2-2"> تحت المعالجه</label>
+            </div>
+
+            <div class="custom-checkbox custom-control custom-control-inline ng-star-inserted">
+                <input type="checkbox" class="custom-control-input" id="custom-radio-2-3" name="custom-radio-2-0"
+                       value="AVAILABLE">
+                <label class="custom-control-label" for="custom-radio-2-3">موظف</label>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<!-- =================== end body filter ================= -->
+<!-- =================== Start body Data ================= -->
+
+<div class="container-fluid">
+
+    @foreach (var item in Model.RecruitmenterTbls)
+    {
+        <div style="position: relative;">
+
+            @if (!item.IsChoosed)
+            {<p class="titleAbsoulte"> متاح  </p>
+            }
+            else
+            {
+                <p class="titleAbsoulte" style="background-color:red;"> غير متاح  </p>
+            }
+
+            <table class="table" >
+                <tbody>
+                    <tr>
+                        <td> <img src="images/2.png" class="img-fluid user" alt=""> </td>
+
+                        <td>
+                            <p class="label"> ID</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Id)  </p>
+                        </td>
+                        <td>
+                            <p class="label"> الاسم</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.RecName)  </p>
+                        </td>
+                        <td>
+                            <p class="label"> المهنة</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Job.Job)  </p>
+                        </td>
+                        <td>
+                            <p class="label"> الجنسية</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Nationality.CountryName) </p>
+                        </td>
+                        <td>
+                            <p class="label"> الديانة</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Relegion.Relegion) </p>
+                        </td>
+                        <td>
+                            <p class="label"> العمر</p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Age) </p>
+                        </td>
+                        <td>
+                            <p class="label"> الخبرة السابقة</p>
+                            <p class="value">
+                                <input type="checkbox" checked="@item.HasExper"  disabled="disabled"/>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label"> المكتب </p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.OfficeTblNavigation.OfficeNameAr) </p>
+                        </td>
+                        <td>
+                            <p class="label"> معرفة مسبقا </p>
+                            <p class="value"><input type="checkbox" checked=@item.IsDef disabled="disabled" /> </p>
+                        </td>
+                        @*<td>
+                                <p class="label">  تم الاختيار </p>
+                                <p class="value"> <input type="checkbox" checked=@item.IsChoosed /> </p>
+                            </td>*@
+                        <td>
+                            <p class="label">  رقم السيرة  </p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Cvno) </p>
+                        </td>
+                        <td>
+                            <p class="label">  رقم الجواز   </p>
+                            <p class="value"> @Html.DisplayFor(modelItem => item.Passportno) </p>
+                        </td>
+                        <td>
+                            <p class="label">  عرض    </p>
+                            <p class="value">
+                                <input type="checkbox" checked=@item.WebShow  disabled="disabled" />
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label">   حجز   </p>
+                            <p class="value"> <input type="checkbox" checked=@item.WedCk  disabled="disabled"/> </p>
+                        </td>
+
+
+                        @*ادوات
+                            اجراءات*@
+
+
+
+                        <td>
+                            <div class="listButton">
+                                <button role="button" class="btn btn-primary  detail popUpEdit"  data-toggle="modal" data-target="#EditAllDetailsModal">
+                                    @*<a class="notify" data-toggle="modal" data-target="#exampleModal2">*@
+                                   <span> عرض السيره الذاتية
+                                         </span>
+                                   @* </a>*@
+                                </button>
+
+                                <br>
+                                <button role="button" class="btn btn-primary  PAY popUpEditAll "  data-toggle="modal" data-target="#EditAllDetailsModal">
+                                    <span> التفاصيل </span>
+                                </button>
+
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    }
+
+</div>
+
+
+<!-- Ajax for modal Fade -->
+
+
+
+
+
+
+
+<!-- ============== pagenation =========== -->
+<div class="pagination-template">
+    <ul role="navigation" class="ngx-pagination ng-star-inserted" aria-label="Pagination">
+        <li class="pagination-previous disabled ng-star-inserted">
+            <!----><span class="ng-star-inserted"> <span class="show-for-sr">page</span></span>
+            <!---->
+        </li>
+        <!---->
+        <!-- <li class="small-screen"> 1 / 58 </li> -->
+        <li class="current ng-star-inserted">
+            <!----><span class="show-for-sr ng-star-inserted">You're on page </span><span class="ng-star-inserted">1</span>
+            <!---->
+            <!---->
+        </li>
+        <li class="ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>2</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <li class="ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>3</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <li class="ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>4</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <li class="ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>5</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <li class="ellipsis ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>...</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <li class="ng-star-inserted">
+            <a tabindex="0" class="ng-star-inserted">
+                <span class="show-for-sr">
+                    page
+                </span><span>58</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <!---->
+        <li class="pagination-next ng-star-inserted">
+            <a tabindex="0" aria-label=" page" class="ng-star-inserted">
+                <span class="show-for-sr">page</span>
+            </a>
+            <!---->
+            <!---->
+        </li>
+        <!---->
+    </ul>
+</div>
+
+<!-- ================ end pagenation =========] -->

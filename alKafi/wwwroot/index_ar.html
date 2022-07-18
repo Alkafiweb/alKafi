@@ -1,0 +1,718 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <title>لوحة تحكم مكاتب الإستقدام </title>
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+
+    <link rel="stylesheet" href="ar-css/bootstrap.min.css" />
+    <link rel="stylesheet" href="ar-css/style.css" />
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> الرجاء اختيار نوع طلب التوظيف
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"> عقد تأجير</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">عقد
+                        توسط</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content model_two">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> بيانات عقد التوسط
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">عقد التوسط <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="عقد التوسط">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">رقم الهويه / الاقامة <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="رقم الهويه / الاقامة">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">تاريخ الميلاد / انتهاء الاقامة <span
+                                    class="astric">*</span></label>
+                            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="تاريخ الميلاد / انتهاء الاقامة">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="" class=""> الغاء </a>
+                    <button type="button" class="btn btn-primary">التالى </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content model_two">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> تنبيهات العقد
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="position: relative;">
+                        <p class="titleAbsoulte">
+                            تم القبول من وزارة العمل الأجنبية
+
+                        </p>
+                        <table class="table">
+
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        <p class="label">
+                                            اجراء من
+
+
+                                        </p>
+                                        <p class="value">
+                                            2000909961
+                                        </p>
+                                    </td>
+
+                                    <td>
+                                        <p class="label">
+                                            التاريخ
+
+
+                                        </p>
+                                        <p class="value">
+                                            1904181853
+                                        </p>
+
+
+                                    </td>
+                                    <td>
+                                        <p class="label">
+                                            الوقت
+
+
+                                        </p>
+                                        <p class="value">
+                                            1029717137
+                                        </p>
+
+
+                                    </td>
+
+
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content model_two">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> التأكيد على الاجراء
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>هل أنت متأكد من طلبك بإلغاء طلب التوظيف؟</div>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1"> سبب الالغاء <span class="astric">*</span></label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="" class=""> الغاء </a>
+
+                    <a href="" class="" data-dismiss="modal" aria-label="Close"> اغلاق </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= -->
+    <header class="">
+
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img width="130" src="images/Musaned_logo.svg" alt="candidate photo" class="img-fluid">
+                </a>
+                <ul class="nav align-items-center">
+                    <li class="nav-item Lang">
+                        <a href="#" class="text-uppercase nav-link ">EN</a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-lg fa-tachometer ng-star-inserted"></i>
+                                لوحة التحكم
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-lg fa-user-o ng-star-inserted"></i>قائمة
+                                المرشحين </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-handshake-o fa-lg ng-star-inserted"></i> عقد
+                                الارتباط</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-clipboard fa-lg ng-star-inserted"></i> طلبات
+                                التوظيف</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-briefcase fa-lg ng-star-inserted"></i>اصحاب
+                                العمل </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-id-card-o fa-lg ng-star-inserted"></i>
+                                تحديث بيانات المنشأة </a>
+                        </li>
+
+
+                    </ul>
+                    <li class="nav-item dropdown user-account">
+
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+
+                            <span class="avatar avatar-online">
+                                <img src="images/avatar_placeholder.png" alt="avatar">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="">
+                                الاسم
+                            </a>
+                            <div class="dropdown-divider">
+
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                مكتب جافا للاستقدام Change
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                ادارة حساب واحد
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                معلومات الحساب
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                تسجيل خروج
+                            </a>
+
+
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!-- ================ end header ====================== -->
+
+
+    <!-- ================= start body title ================== -->
+    <div class="container-fluid bodyTitle">
+
+
+        <div class="row">
+            <div class="col text-left">
+                <h1> احدث طلبات التوظيف</h1>
+            </div>
+            <div class="col-auto d-flex align-items-center"><button role="button" data-toggle="modal"
+                    data-target="#exampleModal" class="btn btn-primary mb-2 mt-2 ng-star-inserted"><em
+                        class="fa fa-lg fa-clipboard"></em> &nbsp;
+                    <span> طلب توظيف جديد</span></button>
+                <!---->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================== end body title and start body table ================= -->
+    <div class="container-fluid">
+
+        <div style="position: relative;">
+            <table class="table">
+                <p class="titleAbsoulte">
+                    تم القبول من وزارة العمل الأجنبية
+
+                </p>
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <p class="label">
+                                رقم العقد
+
+
+                            </p>
+                            <p class="value">
+                                2000909961
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                رقم التأشيرة
+
+
+                            </p>
+                            <p class="value">
+                                1904181853
+                            </p>
+
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                صاحب العمل
+
+
+                            </p>
+                            <p class="value">
+                                1029717137 - SHATHA ABDULLAH IBRAHIM ALAMMAR
+                            </p>
+
+
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                المرشح
+                            </p>
+                            <p class="value ">
+                                <a href="">
+                                    AKTER IASMIN
+                                </a>
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                الوظيفة
+                            </p>
+                            <p class="value">
+                                House Maid
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                الجنسية
+                            </p>
+                            <div class="value">
+                                <img src="images/bd.svg" alt="">
+                                Bangladesh
+                            </div>
+                        </td>
+                        <td>
+                            <p class="label">
+                                مكتب الإرسال الخارجي
+
+
+                            </p>
+
+                            <p class="value">
+                                509/BON VOYAGE TRAVELS
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                الدفع
+                            </p>
+
+                            <p class="value">
+                                Unpaid
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label">
+                                تاريخ الإنشاء
+
+
+                            </p>
+
+                            <p class="value">
+                                2022-04-10 10:34
+                            </p>
+                        </td>
+
+
+                        <td>
+                            <div class="listButton">
+                                <button role="button" class="btn btn-primary  detail">
+                                    <span>التفاصيل </span>
+                                </button>
+
+                                <button role="button" class="btn btn-primary  PAY">
+                                    <span> دفع رسوم التفويض</span>
+                                </button>
+
+                                <p class="m-0">
+                                    <a href="#" class="notify" data-toggle="modal" data-target="#exampleModal2">
+                                        التنبيهات
+                                    </a>
+                                </p>
+
+                                <a href="#" class="cancel" data-toggle="modal" data-target="#exampleModal3">
+                                    الغاء
+                                </a>
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+
+        <!-- ======== -->
+        <div style="position: relative;">
+            <table class="table">
+                <p class="titleAbsoulte">
+                    تم القبول من وزارة العمل الأجنبية
+
+                </p>
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <p class="label">
+                                رقم العقد
+
+
+                            </p>
+                            <p class="value">
+                                2000909961
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                رقم التأشيرة
+
+
+                            </p>
+                            <p class="value">
+                                1904181853
+                            </p>
+
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                صاحب العمل
+
+
+                            </p>
+                            <p class="value">
+                                1029717137 - SHATHA ABDULLAH IBRAHIM ALAMMAR
+                            </p>
+
+
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                المرشح
+                            </p>
+                            <p class="value ">
+                                <a href="">
+                                    AKTER IASMIN
+                                </a>
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                الوظيفة
+                            </p>
+                            <p class="value">
+                                House Maid
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                الجنسية
+                            </p>
+                            <div class="value">
+                                <img src="images/bd.svg" alt="">
+                                Bangladesh
+                            </div>
+                        </td>
+                        <td>
+                            <p class="label">
+                                مكتب الإرسال الخارجي
+
+
+                            </p>
+
+                            <p class="value">
+                                509/BON VOYAGE TRAVELS
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                الدفع
+                            </p>
+
+                            <p class="value">
+                                Unpaid
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label">
+                                تاريخ الإنشاء
+
+
+                            </p>
+
+                            <p class="value">
+                                2022-04-10 10:34
+                            </p>
+                        </td>
+
+
+                        <td>
+                            <div class="listButton">
+                                <button role="button" class="btn btn-primary  detail">
+                                    <span>التفاصيل </span>
+                                </button>
+
+                                <button role="button" class="btn btn-primary  PAY">
+                                    <span> دفع رسوم التفويض</span>
+                                </button>
+
+                                <p class="m-0">
+                                    <a href="#" class="notify">
+                                        التنبيهات
+                                    </a>
+                                </p>
+
+                                <a href="#" class="cancel">
+                                    الغاء
+                                </a>
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- =================== end body table ================= -->
+    <!-- ==============foooter ============== -->
+    <div id="jira-widget">
+        <button class="jira-btn" onclick="openFunction()"><span>مساعدة</span><em
+                class="fa fa-commenting-o"></em></button>
+        <div class="help-window" id="windowJI">
+            <form action="">
+                <div class="modal-header">
+                    <h5 class="modal-title"> اترك رسالة</h5>
+                    <button type="button" class="close" onclick="closeFunction()"><span>×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1"> نوع الطلب <span class="astric">*</span></label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">الاسم <span class="astric">*</span></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="الاسم">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">البريد الالكترونى <span class="astric">*</span></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="البريد الالكترونى ">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> الوصف <span class="astric">*</span></label>
+                        <textarea type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp"></textarea>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <div class="app-file-upload">
+                            <!---->
+                            <label>المرفقات</label>
+                            <label class="app-file-upload-dropzone" for="file-upload-1">
+                                <div class="ng-star-inserted">
+                                    <em class="fa fa-lg fa-paperclip"></em>&nbsp;
+                                    <span> الملفات المدعومة</span>
+                                </div>
+                                <!---->
+                                <!---->
+                            </label>
+                            <small>الامتدادات المسموح به هي PDF/PNG/JPEG/JPG وحجم الملف حتى MB 5</small><input _
+                                type="file" id="file-upload-1" multiple="true">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"><span>ارسال</span>
+                        <span class="loader">
+                            <span class="app-spinner-border app-spinner-border-md">
+
+                            </span></span>
+                    </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    <a id="scroll-to-top" onclick="topFunction()" class="text-uppercase show"> الانتقال الى الاعلى
+    </a>
+
+    <!-- ============= end footer =========== -->
+    <!-- =================== footer ==================== -->
+    <script src="js/slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("scroll-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.opacity = "1";
+                mybutton.style.visibility = "visible"
+            } else {
+                mybutton.style.opacity = "0";
+                mybutton.style.visibility = "hidden"
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        var butn = document.getElementById("windowJI");
+
+        function openFunction() {
+            butn.style.visibility = "visible";
+            butn.style.display = 'block';
+        }
+        function closeFunction() {
+            butn.style.visibility = "hidden";
+            butn.style.display = 'none';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

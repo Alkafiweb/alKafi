@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 #nullable disable
 
@@ -13,20 +14,32 @@ namespace alKafi.Models
         }
 
         public int Id { get; set; }
+        [DisplayName("الجنسية")]
         public int? NationalityId { get; set; }
+        [DisplayName("الديانة")]
         public int? RelegionId { get; set; }
+
+        [DisplayName("العمر")]
         public int? Age { get; set; }
+        [DisplayName("خبرة سابقة")]
         public bool? HasExper { get; set; }
+        [DisplayName("المكتب")]
         public int? OfficeTbl { get; set; }
+        
         public bool IsChoosed { get; set; }
+
+        [DisplayName("الاسم")]
         public string RecName { get; set; }
+
         public string RecMobiile { get; set; }
         public string CvFileName { get; set; }
+        [DisplayName("معرفة مسبقا")]
         public bool? IsDef { get; set; }
         public int? AqedId { get; set; }
         public string SendDate { get; set; }
         public decimal? OfficePrice { get; set; }
         public string Address { get; set; }
+        [DisplayName("رقم الجواز")]
         public string Passportno { get; set; }
         public DateTime? Passportsdate { get; set; }
         public string Passportplace { get; set; }
@@ -36,6 +49,7 @@ namespace alKafi.Models
         public string RecStatusAr { get; set; }
         public string RecStatusEn { get; set; }
         public int TransmitId { get; set; }
+        [DisplayName("رقم السيرة")]
         public string Cvno { get; set; }
         public string RecNotes { get; set; }
         public string BanknameAr { get; set; }
@@ -51,9 +65,13 @@ namespace alKafi.Models
         public string AqarebAddress { get; set; }
         public string AqarebAddressAr { get; set; }
         public string RecAddressAr { get; set; }
+
+        [DisplayName("العمل")]
         public int JobId { get; set; }
         public int PriceUs { get; set; }
         public DateTime? SelectedDate { get; set; }
+
+        
         public bool? IsOffical { get; set; }
         public bool? IsReplace { get; set; }
         public bool? IsReturn { get; set; }
@@ -80,7 +98,9 @@ namespace alKafi.Models
         public string Interview17 { get; set; }
         public string Interview18 { get; set; }
         public string Strimg { get; set; }
+        [DisplayName("حجز")]
         public bool? WedCk { get; set; }
+        [DisplayName("عرض ")]
         public bool? WebShow { get; set; }
 
         public virtual JobTbl Job { get; set; }
