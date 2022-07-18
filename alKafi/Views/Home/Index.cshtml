@@ -1,11 +1,173 @@
-﻿@{
+﻿@model IEnumerable<alKafi.ViewModels.Dashboard>
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<!-- ================= start body title ================== -->
+<div class="container-fluid bodyTitle">
 
 
+    <div class="row">
+        <div class="col ">
+            <h1>Latest Employment requests</h1>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+            <button role="button" data-toggle="modal"
+                    data-target="#exampleModal" class="btn btn-primary mb-2 mt-2 ng-star-inserted">
+                <em class="fa fa-lg fa-clipboard"></em> &nbsp;
+                <span>New Employment Request</span>
+            </button>
+            <a asp-controller="AqedTbls" role="button" class="btn btn-primary mb-2 mt-2 ng-star-inserted">
+                <em class="fa fa-lg fa-clipboard"></em> &nbsp;
+                <span>Display all Contracts</span>
+            </a>
+            <!---->
+        </div>
+    </div>
+</div>
 
 
+<!-- ================== end body title and start body table ================= -->
+
+    @foreach (var m in Model)
+    {
+
+        <div style="position: relative;">
+
+            <table class="table">
+                <p class="titleAbsoulte">
+                    @Html.DisplayFor(modelItem => m.statusNames)
+                </p>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="label">
+                                CONTRACT NUMBER
+                            </p>
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.aqedTbl.Id)
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label">
+                                VISA NUMBER
+                            </p>
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.aqedTbl.Visano)
+                            </p>
 
 
+                        </td>
+                        <td>
+                            <p class="label">
+                                EMPLOYER
+                            </p>
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.customerTbl.IdNum) -
+                                @Html.DisplayFor(modelItem => m.customerTbl.OwnernameEn)
+                            </p>
 
+
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                CANDIDATE
+                            </p>
+                            <p class="value ">
+                                <a href="">
+                                    @Html.DisplayFor(modelItem => m.recruitmenterTbl.RecName)
+                                </a>
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                JOB
+                            </p>
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.jobTbl.JobEn)
+                            </p>
+
+                        </td>
+                        <td>
+                            <p class="label">
+                                NATIONALITY
+                            </p>
+                            <div class="value">
+                                <img src="images/bd.svg" alt="">
+                                @Html.DisplayFor(modelItem => m.nationalityTbl.NationalNameEn)
+                            </div>
+                        </td>
+                        <td>
+                            <p class="label">
+                                EPRO
+                            </p>
+
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.officeTbl.OfficeName)
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="label">
+                                PAYMENT
+                            </p>
+
+                            <p class="value">
+                                @{ var pay = "";
+                                    if (m.payment == null)
+                                        pay = "Unpaid";
+                                    else
+                                        pay = m.payment.PayNotce  + " " + m.payment.Id;
+
+                                }  @pay
+                            </p>
+                        </td>
+                        <td>
+                            <p class="label">
+                                CREATION DATE
+                            </p>
+
+                            <p class="value">
+                                @Html.DisplayFor(modelItem => m.aqedTbl.AqedDate)
+                            </p>
+                        </td>
+
+
+                        <td>
+                            <div class="listButton">
+                                <a role="button" class="btn btn-primary  detail" asp-controller="AqedTbls" asp-action="Details" asp-route-id="@m.aqedTbl.Id">
+                                    <span>Details</span>
+                                </a>
+                                @if(m.payment == null)
+                {
+                            <a role="button" class="btn btn-primary  PAY" asp-controller="Payments" asp-action="Create" >
+                                <span>PAY IN ENJAZ </span>
+                            </a>
+                }
+                else
+                {
+                            <a role="button" class="btn btn-primary  PAY" asp-controller="Payments" asp-action="Edit" asp-route-id="@m.payment.Id">
+                                <span>PAY IN ENJAZ @m.payment.Id</span>
+                            </a>
+                }
+                                <p class="m-0">
+                                    <a  class="notify" data-toggle="modal" data-target="#exampleModal2" >
+                                        Notifications
+                                    </a>
+                                </p>
+
+                                <a href="#" class="cancel" data-toggle="modal" data-target="#exampleModal3">
+                                    Cancel
+                                </a>
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

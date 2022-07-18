@@ -1,0 +1,105 @@
+﻿@model alKafi.Models.OfficeTbl
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>OfficeTbl</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="OfficeName" class="control-label"></label>
+                <input asp-for="OfficeName" class="form-control" />
+                <span asp-validation-for="OfficeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsBlacklist" class="control-label"></label>
+                <input asp-for="IsBlacklist" class="form-control" />
+                <span asp-validation-for="IsBlacklist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeAddress" class="control-label"></label>
+                <input asp-for="OfficeAddress" class="form-control" />
+                <span asp-validation-for="OfficeAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeDist" class="control-label"></label>
+                <input asp-for="OfficeDist" class="form-control" />
+                <span asp-validation-for="OfficeDist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeStreat" class="control-label"></label>
+                <input asp-for="OfficeStreat" class="form-control" />
+                <span asp-validation-for="OfficeStreat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficePhones" class="control-label"></label>
+                <input asp-for="OfficePhones" class="form-control" />
+                <span asp-validation-for="OfficePhones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeNote" class="control-label"></label>
+                <input asp-for="OfficeNote" class="form-control" />
+                <span asp-validation-for="OfficeNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trkhees" class="control-label"></label>
+                <input asp-for="Trkhees" class="form-control" />
+                <span asp-validation-for="Trkhees" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeNameAr" class="control-label"></label>
+                <input asp-for="OfficeNameAr" class="form-control" />
+                <span asp-validation-for="OfficeNameAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeAddressAr" class="control-label"></label>
+                <input asp-for="OfficeAddressAr" class="form-control" />
+                <span asp-validation-for="OfficeAddressAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeDistAr" class="control-label"></label>
+                <input asp-for="OfficeDistAr" class="form-control" />
+                <span asp-validation-for="OfficeDistAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeStreatAr" class="control-label"></label>
+                <input asp-for="OfficeStreatAr" class="form-control" />
+                <span asp-validation-for="OfficeStreatAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aqentname" class="control-label"></label>
+                <input asp-for="Aqentname" class="form-control" />
+                <span asp-validation-for="Aqentname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfaccId" class="control-label"></label>
+                <input asp-for="OfaccId" class="form-control" />
+                <span asp-validation-for="OfaccId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

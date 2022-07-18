@@ -1,0 +1,298 @@
+﻿@model alKafi.Models.AqedTbl
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid bodyTitle">
+
+
+    <div class="row">
+        <div class="col ">
+            <h1>@ViewBag.cName Contract Details </h1>
+        </div>
+        <div class="listButton" style="position: relative;">
+            <button role="button" class="btn btn-primary  detail">
+                <span>Details</span>
+            </button>
+
+            <button role="button" class="btn btn-primary PAY">
+                <span>PAY IN ENJAZ</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+    <div style="position: relative;">
+        <table class="table table-responsive-sm">
+            <p class="titleAbsoulte">
+                @ViewBag.statusName
+            </p>
+            <tbody>
+                <tr>
+
+                    <td>
+                        <p class="label">
+                            CONTRACT NUMBER
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(modelItem => Model.Id)
+                        </p>
+                    </td>
+
+                    <td>
+                        <p class="label">
+                            EMPLOYER Name
+                        </p>
+                        <p class="value">
+                            @ViewBag.cName
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.Visano)
+                        </p>
+                        <div class="value">
+
+                            @Html.DisplayFor(model => model.Visano)
+                        </div>
+                    </td>
+
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.VisaSource)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.VisaSource)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.Visadate)
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(model => model.Visadate)
+                        </p>
+
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.AqedFrom)
+                        </p>
+                        <p class="value ">
+
+                            @Html.DisplayFor(model => model.AqedFrom)
+
+
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.SevenCond)
+                        </p>
+                        <p class="value ">
+                            @Html.DisplayFor(model => model.SevenCond)
+                        </p>
+                    </td>
+                    <td>
+                        <p class="label">
+                            Airport
+                        </p>
+
+                        <p class="value">
+                            @ViewBag.airport
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.AgeFrom)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.AgeFrom)
+                        </p>
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.AgeTo)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.AgeTo)
+                        </p>
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.MouqebMoneys)
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(model => model.MouqebMoneys)
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.Taxval)
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(model => model.Taxval)
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            Relegion
+                        </p>
+                        <p class="value">
+                            @ViewBag.relegion
+                        </p>
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.VisaMoney)
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(modelItem => Model.VisaMoney)
+                        </p>
+
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            Office
+                        </p>
+
+                        <p class="value" style="overflow-wrap: break-word; width:250px">
+                            @ViewBag.office
+                        </p>
+                    </td>
+                    <td>
+                        <p class="label">
+                            Outside Mouqeb
+                        </p>
+                        <p class="value">
+                            @ViewBag.Mouqeb
+                        </p>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            Aqed Source
+                        </p>
+                        <p class="value">
+                            @ViewBag.source
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            Cost Center
+                        </p>
+                        <div class="value">
+                            <img src="images/bd.svg" alt="">
+                            @ViewBag.costCenter
+                        </div>
+                    </td>
+                    <td>
+                        <p class="label">
+                            Curncey
+                        </p>
+                        <p class="value">
+                            @ViewBag.Curncey
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.TaakherAmount)
+                        </p>
+                        <p class="value">
+                            @Html.DisplayFor(modelItem => Model.TaakherAmount)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.ReturnDate)
+                        </p>
+                        <p class="value ">
+                            @Html.DisplayFor(model => model.ReturnDate)
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.Salary)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.Salary)
+                        </p>
+                    </td>
+                    <td>
+
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.TotalAmount)
+                        </p>
+                        <div class="value">
+
+                            @Html.DisplayFor(model => model.TotalAmount)
+                        </div>
+                    </td>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.AqedPeriod)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.AqedPeriod) &nbsp; months
+                        </p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="label">
+                            @Html.DisplayNameFor(model => model.SadadType)
+                        </p>
+
+                        <p class="value">
+                            @Html.DisplayFor(model => model.SadadType)
+                        </p>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-controller="Home" asp-action="Index">Back to List</a> | 
+
+    </div>
+</div>
+
+
+
+
+

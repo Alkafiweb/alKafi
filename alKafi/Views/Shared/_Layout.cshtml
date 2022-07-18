@@ -1,6 +1,21 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <title>New PRO Dashboard</title>
+
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/fonts/css/font-awesome.min.css">
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="UTF-8" />
     <title>@ViewData["Title"] - alKafi</title>
@@ -13,6 +28,121 @@
 
 </head>
 <body>
+
+    <!-- ================= -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content model_two">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Notifications for contract
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Please select request type
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Leasing Contract</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal1">
+                        Tawassut Contract
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content model_two">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Tawassut Contract Details
+
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tawassut Contract <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Tawassut Contract">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Employer ID / Iqama <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Employer ID / Iqama">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">
+                                Employer DoB / Iqama Expiry <span class="astric">*</span>
+                            </label>
+                            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   placeholder="Employer DoB / Iqama Expiry">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="" class=""> Cancel </a>
+                    <button type="button" class="btn btn-primary">Next </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="">
+
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img width="130" src="~/images/Musaned_logo.svg" alt="candidate photo" class="img-fluid">
+                </a>
+                <ul class="nav align-items-center">
+                    <li class="nav-item Lang">
+                        <a href="#" class="text-uppercase nav-link ">ar</a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
     <!-- ================= -->
     <header class="">
 
@@ -33,6 +163,87 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown ">
+
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-lg fa-tachometer ng-star-inserted"></i>
+                                Dashboard
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" asp-controller="Nationality" asp-action="Index">
+                                    NAtionalities
+                                </a>
+                                <a class="dropdown-item" asp-controller="AirportTbls" asp-action="Index">
+                                    Airports
+                                </a>
+                                <a class="dropdown-item" asp-controller="Relegion" asp-action="Index">
+                                    Relegion
+                                </a>
+                                <a class="dropdown-item" asp-controller="StatusName" asp-action="Index">
+                                    Status
+                                </a>
+                                <a class="dropdown-item" asp-controller="Job" asp-action="Index">
+                                    Jobs
+                                </a>
+                                <a class="dropdown-item" asp-controller="AttachmentTypes" asp-action="Index">
+                                    Attachment Types
+                                </a>
+                                <a class="dropdown-item" asp-controller="AqedSource" asp-action="Index">
+                                    AqedS ource
+                                </a>
+                                <a class="dropdown-item" asp-controller="AqedExpeer" asp-action="Index">
+                                    Aqed Expeer
+                                </a>
+
+                                <a class="dropdown-item" asp-controller="AqedCondtion" asp-action="Index">
+                                    Aqed Condtion
+                                </a>
+                                <div class="dropdown-divider">
+
+                                </div>
+
+                                <a class="dropdown-item" asp-controller="Office" asp-action="Index">
+                                    Office Info
+                                </a>
+                                <a class="dropdown-item" asp-controller="OfficeMoney" asp-action="Index">
+                                    Office Money Info
+                                </a>
+
+                                <div class="dropdown-divider">
+
+                                </div>
+                                <a class="dropdown-item" asp-controller="CustPrices" asp-action="Index">
+                                    Cust Prices Info
+                                </a>
+
+                                <div class="dropdown-divider">
+
+                                </div>
+
+                                <a class="dropdown-item" asp-controller="Muaqebs" asp-action="Index">
+                                    Muaqebs Info
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-lg fa-user-o ng-star-inserted"></i>HR Pool</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-handshake-o fa-lg ng-star-inserted"></i>Partnership Contracts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-clipboard fa-lg ng-star-inserted"></i>Employment Requests
+                            </a>
+                        </li>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active">
 
@@ -42,6 +253,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-briefcase fa-lg ng-star-inserted"></i>Employers
+                            </a>
                             <a class="nav-link" href="@Url.Action("Index","HRPool")">
                                 <i class="fa fa-lg fa-user-o ng-star-inserted"></i>قائمة
                                 المرشحين
@@ -49,10 +263,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
+                                <i class="fa fa-id-card-o fa-lg ng-star-inserted"></i>Update
+                                License and Info
+                            </a>
+                            <a class="nav-link" href="#">
                                 <i class="fa fa-handshake-o fa-lg ng-star-inserted"></i> عقد
                                 الارتباط
                             </a>
                         </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-clipboard fa-lg ng-star-inserted"></i> طلبات
@@ -74,6 +294,40 @@
 
 
                     </ul>
+                    <li class="nav-item dropdown user-account">
+
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+
+                            <span class="avatar avatar-online">
+                                <img src="~/images/avatar_placeholder.png" alt="avatar">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="">
+                                Name
+                            </a>
+                            <div class="dropdown-divider">
+
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                مكتب جافا للاستقدام Change
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                Manage Wahid Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                Profile Information
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                Logout
+                            </a>
+
+
+                        </div>
+                    </li>
+                </div>
+            </div>
                     <li class="nav-item dropdown user-account">
 
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -111,6 +365,89 @@
         </nav>
 
     </header>
+    <!-- ================ end header ====================== -->
+
+
+    <div class="container-fluid">
+        @RenderBody()
+
+        </div>
+
+        @RenderSection("Scripts", required: false)
+        <!-- ==============foooter ============== -->
+        <div id="jira-widget">
+            <button class="jira-btn" onclick="openFunction()"><span>Help</span><em class="fa fa-commenting-o"></em></button>
+            <div class="help-window" id="windowJI">
+                <form action="">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Leave us a message</h5>
+                        <button type="button" class="close" onclick="closeFunction()">
+                            <span>×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Request Type <span class="astric">*</span></label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   placeholder="Name">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address <span class="astric">*</span></label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   placeholder="Enter email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Description <span class="astric">*</span></label>
+                            <textarea type="email" class="form-control" id="exampleInputEmail1"
+                                      aria-describedby="emailHelp"></textarea>
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="app-file-upload">
+                                <!---->
+                                <label>Attachments</label>
+                                <label class="app-file-upload-dropzone" for="file-upload-1">
+                                    <div class="ng-star-inserted">
+                                        <em class="fa fa-lg fa-paperclip"></em>&nbsp;
+                                        <span>Supported files</span>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                </label>
+                                <small>Note: Allowed extensions are PDF/PNG/JPEG/JPG and file size up to 5 MB</small><input _ type="file" id="file-upload-1" multiple="true">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send</span>
+                            <span class="loader">
+                                <span class="app-spinner-border app-spinner-border-md">
+
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
     <!-- ================ end header ====================== -->
     <!-- Modal Fade - PopUp Recruitmenter For Edit Short Details  -->
     <!-- -->
@@ -237,6 +574,76 @@
                 </div>
             </form>
 
+
+        <a id="scroll-to-top" onclick="topFunction()" class="text-uppercase show">
+            Back to top
+        </a>
+
+        <!-- ============= end footer =========== -->
+        <!-- =================== footer ==================== -->
+        <!--
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2022 - alKafi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+            -->
+        <script>
+            //Get the button
+            var mybutton = document.getElementById("scroll-to-top");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.opacity = "1";
+                    mybutton.style.visibility = "visible"
+                } else {
+                    mybutton.style.opacity = "0";
+                    mybutton.style.visibility = "hidden"
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            var butn = document.getElementById("windowJI");
+
+            function openFunction() {
+                butn.style.visibility = "visible";
+            }
+            function closeFunction() {
+                butn.style.visibility = "hidden";
+            }
+        </script>
+        <script src="~/js/slim.min.js"></script>
+        <script src="~/js/popper.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/jquery-1.9.1.min.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                $(".notify").click(function () {
+
+                    var id = $(this).closest("tr").find("td").find("p").eq(1).html();
+                    $.ajax({
+                        type: "Get",
+                        url: "/Home/Details/" + id,
+
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "html",
+                        success: function (response) {
+
+                            $("#exampleModal2").find(".modal-body").html(response);
+                            $("#exampleModal2").modal('show');
+                        }
+                    });
+                });
+            });
+        </script>
 
         </div>
     </div>

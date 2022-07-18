@@ -5,19 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\ar-css\.sass-cache\4f4c73d624ee27e987ebc92dfe3660523bd45c9e\style.scssc" />
-    <None Include="wwwroot\ar-css\.sass-cache\619279510dd7d496dff3a8626ee4c2f786cf40a0\style.scssc" />
-    <None Include="wwwroot\ar-css\.sass-cache\75dee4a720f86c5326216b30a12623a70a49e668\style.scssc" />
-    <None Include="wwwroot\ar-css\.sass-cache\90db8d789ca7055f95dff540ecce58ebf129db86\style.scssc" />
-    <None Include="wwwroot\ar-css\.sass-cache\c9161fa19a23f523cf1ec1f3eb8aa0f58d59239a\style.scssc" />
-    <None Include="wwwroot\css\.sass-cache\077980c14fdd0550f898bcafe9784d3776b016a5\style.scssc" />
-    <None Include="wwwroot\css\.sass-cache\464cc3726b8fdd8ed91396757bbdff0afef11967\style.scssc" />
-    <None Include="wwwroot\css\.sass-cache\4f4c73d624ee27e987ebc92dfe3660523bd45c9e\style.scssc" />
-    <None Include="wwwroot\css\.sass-cache\90db8d789ca7055f95dff540ecce58ebf129db86\style.scssc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -29,6 +16,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="PageList" Version="1.2.0" />
+    <PackageReference Include="ReflectionIT.Mvc.Paging" Version="6.0.1" />
+    <PackageReference Include="X.PagedList" Version="8.4.3" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
   </ItemGroup>
 
   <ItemGroup>
