@@ -1,0 +1,255 @@
+﻿@model IEnumerable<alKafi.ViewModels.Dashboard>
+@using System.ComponentModel.DataAnnotations;
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="container-fluid bodyTitle">
+        <div class="row">
+            <div class="col text-right pagenation">
+                <p>
+                    @(ViewBag.Skip)  - @(ViewBag.currentPage*10)  of @ViewBag.TotalPages
+                </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col text-left">
+                <h1>
+                    Contracts Details
+
+
+                </h1>
+            </div>
+            <div class="col-auto d-flex align-items-center">
+                <button role="button" data-toggle="modal"
+                        data-target="#exampleModal" class="btn btn-primary mb-2 mt-2 ng-star-inserted">
+                    <em class="fa fa-lg fa-plus"></em> &nbsp;
+                    <span> ADD </span>
+                </button>
+                <!---->
+            </div>
+        </div>
+
+        <div class="container-fluid filter">
+            <form class="app-filter" asp-action="Index" method="get">
+                <div class="app-panel mb-0">
+                    <div id="filter_panel" class="row justify-content-md-left">
+                        <div class="dropdown">
+                            <div class=" dropdown-toggle app-filter-header" id="dropdownMenuButton" data-toggle="dropdown"
+                                 aria-haspopup="true" aria-expanded="false">
+                                <em class="fa fa-lg fa-sort"></em><span class="app-filter-header-placeholder">
+                                    <span class="ng-star-inserted">Date (Newest)</span>
+
+                                </span><em class="fa fa-lg fa-angle-down"></em>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#"> Date (Newest)</a>
+                                <a class="dropdown-item" href="#"> Date (Oldest) </a>
+
+                            </div>
+                        </div>
+                        <div class="filter_by_epro">
+                            <div class=" dropdown-toggle app-filter-header" id="filter_by_from" data-toggle="dropdown"
+                                 aria-haspopup="true" aria-expanded="false">
+                                <em class="fa fa-lg fa-calendar ng-star-inserted"></em><span class="app-filter-header-placeholder">
+                                    <span class="ng-star-inserted label">
+                                        From Date
+                                        <input type="text" id="datepicker">
+                                    </span>
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="filter_by_epro">
+                            <div class=" dropdown-toggle app-filter-header" id="filter_by_to" data-toggle="dropdown"
+                                 aria-haspopup="true" aria-expanded="false">
+                                <em class="fa fa-lg fa-calendar ng-star-inserted"></em><span class="app-filter-header-placeholder">
+                                    <span class="ng-star-inserted label">
+                                        To Date
+                                        <input type="text" id="datepicker2">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="filter_by_epro">
+                            <div class=" app-filter-header" id="filter_by_to"
+                                 aria-haspopup="true" aria-expanded="false">
+                                <span class="app-filter-header-placeholder">
+                                    <span class="ng-star-inserted label">
+                                        Customer Searsh
+                                        <input type="text" id="CustSearsh" name="SearchString" value="@ViewData["CurrentFilter"]">
+                                        <input type="submit" value="Search" class="btn" />
+                                    </span>
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="my-2 py-1 px-2 app-filter-control-value-list app-clear-filters ng-star-inserted">
+                                <span>
+                                    <a asp-action="Index">
+                                        Clear
+                                        All Filters
+                                    </a>
+                                    
+                                </span><em class="fa fa-lg fa-times-circle"></em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    
+    @foreach (var item in Model)
+    {
+
+        <div class="container-fluid">
+            <div style="position: relative;">
+                <table class="table">
+                    <p class="titleAbsoulte">
+                        @Html.DisplayFor(modelItem => item.statusNames  )
+                    </p>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="label">
+                                    Customer Name
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.customerTbl.OwnernameEn)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Contract Date
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.AqedDate)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    VISA NUMBER
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.Visano)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    VISA Date
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.Visadate)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Reqruinment Count
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.RecCount)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Job Title
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.jobTbl.JobEn)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Nationallity Name
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.nationalityTbl.NationalNameEn)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Salary
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.Salary)
+                                </p>
+                            </td>
+                            <td>
+                                <p class="label">
+                                    Contract Totlal Price
+                                </p>
+                                <p class="value">
+                                    @Html.DisplayFor(modelItem => item.aqedTbl.TotalAmount)
+                                </p>
+                            </td>
+                            <td>
+                                <div class="listButton">
+                                    <a class="btn btn-primary  detail" role="button" asp-action="Details" asp-route-id="@item.aqedTbl.Id">
+                                        <span>DETAILS </span>
+                                    </a>
+                                    <a class="btn btn-primary  detail" role="button" asp-action="Edit" asp-route-id="@item.aqedTbl.Id">
+                                        <span>Edit </span>
+                                    </a>
+                                    <a class="btn btn-primary  detail" role="button" asp-action="Delete" asp-route-id="@item.aqedTbl.Id">
+                                        <span>Delete </span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    }
+
+    @{
+        var prevDisabled = !ViewBag.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !ViewBag.HasNextPage ? "disabled" : "";
+    }
+
+
+    <div class="pagination-template">
+        <ul role="navigation" class="ngx-pagination ng-star-inserted" aria-label="Pagination">
+            <li class="pagination-previous @prevDisabled ng-star-inserted" asp-action="Index"
+                asp-route-pageNumber="@(ViewBag.currentPage - 1)">
+                <a asp-action="Index" hidden="@(!ViewBag.HasPreviousPage)"
+                   asp-route-pageNumber="@(ViewBag.currentPage - 5)"
+                   class=" @prevDisabled">
+                    Previous
+                </a>
+            </li>
+            @{
+                for (int i = ViewBag.currentPage; i < ViewBag.ViewPages; i++)
+                {
+                    <li class="ng-star-inserted">
+                        <a tabindex="0" class="ng-star-inserted" asp-action="Index" asp-route-pageNumber="@(i)" 
+                           asp-route-searchString="@ViewBag.CurrentFilter" >
+                            <span class="show-for-sr">
+                                page
+                            </span><span>@i</span>
+                        </a>
+                    </li>
+                }
+            }
+
+
+            <li class="pagination-next @nextDisabled ng-star-inserted" asp-action="Index"
+                asp-route-pageNumber="@(ViewBag.currentPage - 1)">
+                <a asp-action="Index" hidden="@(!ViewBag.HasNextPage)"
+                   asp-route-pageNumber="@(ViewBag.currentPage + 5)"
+                   class=" @nextDisabled">
+                    Next
+                </a>
+            </li>
+
+            <!---->
+        </ul>
+    </div>

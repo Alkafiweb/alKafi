@@ -1,0 +1,300 @@
+﻿@model IEnumerable<alKafi.Models.CustomerTbl>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomePhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pox)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsBlacklist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerAddressAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerAddressEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerStreetAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerStreetEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerReginAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerReginEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerMadinaAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerMadinaEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerStatusAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerStatusEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerChildNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnernameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Custnote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BulldingNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdExpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPlaceOfIssued)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPlaceOfBirthdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDateofbirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FiilingNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FillingPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KidsNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SakanType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issickpeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isoldpeoplr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visanum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusJop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusOld)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusWifeOld)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusSonOld)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusAccId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pox)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsBlacklist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerAddressAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerAddressEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerStreetAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerStreetEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerReginAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerReginEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerMadinaAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerMadinaEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerStatusAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerStatusEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerChildNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnernameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Custnote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BulldingNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdExpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPlaceOfIssued)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPlaceOfBirthdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDateofbirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiilingNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FillingPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KidsNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SakanType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Issickpeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isoldpeoplr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visanum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusJop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusOld)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusWifeOld)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusSonOld)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusAccId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

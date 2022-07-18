@@ -1,0 +1,60 @@
+﻿@model alKafi.Models.AqedNotesTbl
+
+
+                <div style="position: relative;">
+                    <p class="titleAbsoulte">
+                        FMOL APPROVED
+
+
+                    </p>
+                    <table class="table">
+
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    <p class="label">
+                                        ACTION BY
+
+
+
+                                    </p>
+                                    <p class="value">
+                                        @Html.DisplayFor(model => model.Notes)
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p class="label">
+                                        DATE & TIME
+
+
+                                    </p>
+                                    <p class="value">
+                                        @Html.DisplayFor(model => model.NoteDate)
+                                    </p>
+
+
+                                </td>
+                                <td>
+                                    <p class="label">
+                                        USERID
+
+
+                                    </p>
+                                    <p class="value">
+                                        @Html.DisplayFor(model => model.UserId)
+                                    </p>
+
+
+                                </td>
+
+
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>

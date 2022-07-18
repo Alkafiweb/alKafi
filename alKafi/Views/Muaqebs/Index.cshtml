@@ -1,0 +1,48 @@
+﻿@model IEnumerable<alKafi.Models.Muaqeb>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MuaqebName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MuaqebPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoaccId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MuaqebName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MuaqebPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoaccId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MuaqebId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MuaqebId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MuaqebId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
